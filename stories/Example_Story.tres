@@ -1,0 +1,645 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/EXP-System-Dialog/Resource_EditorStory/EXP_EditorStory.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+TYPE = "EXP_Story_editor"
+names = {
+"DialogPlayer/CharacterTextures": 5,
+"DialogPlayer/ChoiceBranching": 3,
+"DialogPlayer/Test": 1,
+"DialogPlayer/TextureLibrary": 4,
+"DialogPlayer/VariableInjection": 2
+}
+story = {
+1: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "This is the first test of the vanilla dialog player.",
+"name": "DialogPlayer/Test",
+"nodes": {
+1: {
+"graph_offset": Vector2( 120, 100 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 200, 280 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Dave the Dev</speaker>
+<dialog>Thanks to your support, we've surpassed 1,500 subscribers!</dialog>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 280, 460 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Dave the Dev</speaker>
+<dialog>Hit SUBSCRIBE and the BELL to come aboard and add your story to our growing game dev community.</dialog>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 800, 100 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Twitter-Kun</speaker>
+<dialog>Keep up with David's dev logs on Twitter: twitter.com/EXP_Worlds</dialog>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 880, 280 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Insta-Chan</speaker>
+<dialog>Follow David's life through Japan on Instagram: instagram.com/expworlds/</dialog>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 960, 460 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+},
+2: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "This is a test of the variable injection.",
+"name": "DialogPlayer/VariableInjection",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 700, 520 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 40, 220 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>DaveTheDev</speaker>
+<dialog>Hello, if variable injection is working <variable>Test</variable> text string will show up here.</dialog>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 40, 400 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Program</speaker>
+<dialog>Because of variable injection I know the player's level is <variable>PLAYER/LEVEL</variable> and that PI equals <variable>PI</variable>.</dialog>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 620, 40 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Program</speaker>
+<dialog>The current date and time is... <variable>DATE</variable>.</dialog>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 620, 240 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Program</speaker>
+<dialog>and I know the system I'm running on is <variable>SYSTEM</variable>.</dialog>",
+"type": "line"
+}
+}
+},
+3: {
+"available_nid": [ 3, 4, 5, 6, 7 ],
+"groups": [  ],
+"human_readable_description": "This is a test of choice branching.",
+"name": "DialogPlayer/ChoiceBranching",
+"nodes": {
+1: {
+"graph_offset": Vector2( -320, -60 ),
+"links": {
+0: 8
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 5800, -380 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+},
+8: {
+"graph_offset": Vector2( -100, -260 ),
+"links": {
+0: 9
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>Acorda! Esta atrasado!</dialog>
+",
+"type": "line"
+},
+9: {
+"graph_offset": Vector2( 220, -80 ),
+"links": {
+0: 10
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog> … Atrasado... Atrasado! Merda!</dialog>",
+"type": "line"
+},
+10: {
+"graph_offset": Vector2( 420, -320 ),
+"links": {
+0: 11,
+1: 11
+},
+"rect_size": Vector2( 482, 195 ),
+"slot_amount": 2,
+"text": "<speaker>Narrador</speaker>
+<dialog>Luiz comeca a se vestir o mais rapido possivel. </dialog>
+<choiceJSON>{\"Guardar os papeis na mochila\" : 0, \"Ir para a cozinha\" : 1, }</choiceJSON>",
+"type": "line"
+},
+11: {
+"graph_offset": Vector2( 920, -380 ),
+"links": {
+0: 12
+},
+"rect_size": Vector2( 487.001, 180 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog>Por que nao me chamou antes?!</dialog>
+",
+"type": "line"
+},
+12: {
+"graph_offset": Vector2( 740, -80 ),
+"links": {
+0: 13
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>E eu virei despertador de marmanjo por acaso? Tu ja ta com 19 anos na cara… Lembra de levar seus documentos hoje…</dialog>",
+"type": "line"
+},
+13: {
+"graph_offset": Vector2( 1240, -80 ),
+"links": {
+0: 14
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>Toma seu cafe sossegado, ja perdeu o seu onibus de qualquer forma...</dialog>",
+"type": "line"
+},
+14: {
+"graph_offset": Vector2( 1440, -300 ),
+"links": {
+0: 15
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Narrador</speaker>
+<dialog>*Em Cima da mesa o de sempre, uma xicara de cafe e uma torrada com manteiga* </dialog>",
+"type": "line"
+},
+15: {
+"graph_offset": Vector2( 1740, -80 ),
+"links": {
+0: 16
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Narrador</speaker>
+<dialog>*Luiz pega o jornal deixado por seu pai em cima da geladeira: 2 de abril de 1964: ''Cessadas as operacoes militares: A calma volta a reinar no pais''...*
+ </dialog>",
+"type": "line"
+},
+16: {
+"graph_offset": Vector2( 1940, -300 ),
+"links": {
+0: 17,
+1: 21,
+2: 23
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 3,
+"text": "<speaker>Mae</speaker>
+<dialog>Luiz pelo amor de Deus, tira os olhos desse jornal e presta atencao no seu cafe da manha…</dialog>
+<choiceJSON>{\"Luiz:  - O pai ja saiu? \" : 0, \"- Luiz:  O que acha disso mae?\" : 1, \"*continuar lendo*\" : 2}</choiceJSON>
+",
+"type": "line"
+},
+17: {
+"graph_offset": Vector2( 2440, -420 ),
+"links": {
+0: 18
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>Saiu mais cedo para pegar a correspondencia dos Oliveira… 
+</dialog>",
+"type": "line"
+},
+18: {
+"graph_offset": Vector2( 2920, -420 ),
+"links": {
+0: 19
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog>Eles nao voltaram ainda?</dialog>",
+"type": "line"
+},
+19: {
+"graph_offset": Vector2( 3400, -420 ),
+"links": {
+0: 20
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog>Eles nao voltaram ainda?</dialog>",
+"type": "line"
+},
+20: {
+"graph_offset": Vector2( 3880, -420 ),
+"links": {
+0: 28
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>Nao e acho que nao voltam logo… Aqueles la sao um pouco exagerados na minha opniao. Chega de papo, vai perder o proximo onibus se nao sair
+logo</dialog>",
+"type": "line"
+},
+21: {
+"graph_offset": Vector2( 2440, -240 ),
+"links": {
+0: 22
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>O mundo esta uma bagunca…</dialog>
+",
+"type": "line"
+},
+22: {
+"graph_offset": Vector2( 4160, -240 ),
+"links": {
+0: 28
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog>Eh… </dialog>",
+"type": "line"
+},
+23: {
+"graph_offset": Vector2( 2440, -60 ),
+"links": {
+0: 24
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>Esta mais do que na hora de voce comprar um despertador mocinho…</dialog>",
+"type": "line"
+},
+24: {
+"graph_offset": Vector2( 2920, -60 ),
+"links": {
+0: 25
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog>*continua lendo*
+	‘Tropas do I, II e IV Exercito dominam a situacao - Apenas no Rio Grande do Sul existem manifestacoes de resistencia ao esquema militar formado para a deposicao do sr. Joao…’</dialog>",
+"type": "line"
+},
+25: {
+"graph_offset": Vector2( 3400, -60 ),
+"links": {
+0: 26
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog>*Luiz esbarra em sua xicara.</dialog>",
+"type": "line"
+},
+26: {
+"graph_offset": Vector2( 3880, -60 ),
+"links": {
+0: 27
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>Ai meu bom Jesus!!! Luiz o que voce pensa que esta fazendo? Larga a porcaria desse jornal e limpa esse chao!</dialog>",
+"type": "line"
+},
+27: {
+"graph_offset": Vector2( 4360, -60 ),
+"links": {
+0: 28
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog>Desculpa, desculpa, desculpa… *seca o chao*
+</dialog>",
+"type": "line"
+},
+28: {
+"graph_offset": Vector2( 4820, -260 ),
+"links": {
+0: 29
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>Seu pai vai te levar ate o ponto de onibus, deve estar na portaria conversando com o seu Mario.
+</dialog>",
+"type": "line"
+},
+29: {
+"graph_offset": Vector2( 5300, -260 ),
+"links": {
+0: 30
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Luiz</speaker>
+<dialog>Ok. Ate mais tarde *saindo do apartamento.*
+</dialog>",
+"type": "line"
+},
+30: {
+"graph_offset": Vector2( 5300, -460 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mae</speaker>
+<dialog>Se cuida meu filho...
+</dialog>
+",
+"type": "line"
+}
+}
+},
+4: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "A list of texture filepaths.",
+"name": "DialogPlayer/TextureLibrary",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "{
+\"emi\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/emi.png\",
+\"haruko\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/haruko.png\",
+\"mrpettles\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/mrpettles.png\",
+\"nez\" :  \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/nez.png\",
+\"shin\" : \"res://DaveTheDev Tutorials/12 Dialog Player/textures/characters/shin.png\"
+}",
+"type": "line"
+}
+}
+},
+5: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "This is a test of the character textures.",
+"name": "DialogPlayer/CharacterTextures",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 1020, 760 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 540, 40 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Emi-chan</speaker>
+<dialog>Hey everyone! Let's have a Sea Day party!</dialog>
+<image>emi</image>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 1020, 40 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Haruko-chan</speaker>
+<dialog>Mr. Pettles, what is a Sea Day?</dialog>
+<image>haruko</image>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 40, 220 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mr. Pettles</speaker>
+<dialog>I'm glad you asked Haruko-chan. There are, of course, no dumb questions.</dialog>
+<image>mrpettles</image>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 540, 220 ),
+"links": {
+0: 7
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Wait Mr. Pettles! I know about Sea Day, let me explain it.</dialog>
+<image>nez</image>",
+"type": "line"
+},
+7: {
+"graph_offset": Vector2( 1020, 220 ),
+"links": {
+0: 8
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Mr. Pettles</speaker>
+<dialog>Well, I suppose Nez-chan, go ahead...</dialog>
+<image>mrpettles</image>",
+"type": "line"
+},
+8: {
+"graph_offset": Vector2( 40, 400 ),
+"links": {
+0: 9
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Sea Day is a Japanese holiday on July 23rd.</dialog>
+<image>nez</image>",
+"type": "line"
+},
+9: {
+"graph_offset": Vector2( 540, 400 ),
+"links": {
+0: 10
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Nez-chan</speaker>
+<dialog>We all go to the beach and smack Suika with a stick.</dialog>
+<image>nez</image>",
+"type": "line"
+},
+10: {
+"graph_offset": Vector2( 1020, 400 ),
+"links": {
+0: 11
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Shin-kun</speaker>
+<dialog>Wait! Suika, what'za Suika?</dialog>
+<image>shin</image>",
+"type": "line"
+},
+11: {
+"graph_offset": Vector2( 40, 580 ),
+"links": {
+0: 12
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Nez-chan</speaker>
+<dialog>Suika means watermelon in Japanese.</dialog>
+<image>nez</image>",
+"type": "line"
+},
+12: {
+"graph_offset": Vector2( 540, 580 ),
+"links": {
+0: 13
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Shin-kun</speaker>
+<dialog>Oh, that'za relief! I was worried it was my head!</dialog>
+<image>shin</image>",
+"type": "line"
+},
+13: {
+"graph_offset": Vector2( 1020, 580 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Haruko-chan</speaker>
+<dialog>We can whack your head too while we're at it!</dialog>
+<image>haruko</image>",
+"type": "line"
+}
+}
+}
+}
+available_dids = [  ]
+groups = [  ]
